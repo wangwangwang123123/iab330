@@ -1,0 +1,12 @@
+.Home{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.TabBar{
+	width: 100%;
+	position: absolute;
+	bottom: 0
+}
+.rateTag{
+	float: right;
+}
