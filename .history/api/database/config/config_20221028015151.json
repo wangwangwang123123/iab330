@@ -4,7 +4,7 @@
     "password": "981020",
     "database": "cab302",
     "host": "localhost",
-    "dialect": "sqlite",
+    "dialect": "sq",
     "port" : "3304"
 
   },

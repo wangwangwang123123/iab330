@@ -4,7 +4,7 @@
     "password": "981020",
     "database": "cab302",
     "host": "localhost",
-    "dialect": "sqlite",
+    "dialect": "mariadb",
     "port" : "3304"
 
   },
