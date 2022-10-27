@@ -1,6 +1,6 @@
 
 import './App.css';
-import Home from "./Page/Home"
+import Room from "./Page/Room"
 import RoomList from './Page/RoomList';
 import TotalAmount from './Page/TotalAmount';
 import React from 'react';
@@ -13,7 +13,8 @@ import Navigation from './Component/Navigation';
       <div className='App'>
 
         <Routes>
-          <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<RoomList />} />
+          <Route path="/room" element={<Room />} />
           <Route path="/TotalAmount" element={<TotalAmount />} />
           <Route path="/RoomList" element={<RoomList />} />
 

@@ -1,9 +1,36 @@
-import React from 'react'
-import { NavBar,Card, Divider, List, Tag, Collapse } from 'antd-mobile'
+import React, { useEffect, useState } from 'react'
+import { NavBar,Card,Tag } from 'antd-mobile'
 import ReactEcharts from "echarts-for-react"
-
 import { useNavigate, } from 'react-router-dom';
 function TotalAmount() {
+  let local = window.location.host
+  const [InternalNum ,setInternalNum] = useState(10)
+  const [SurgicalNum ,setSurgicalNum] = useState(10)
+  const [PediatricsNum ,setPediatricsNum] = useState(10)
+  const [EmergencyNum ,setEmergencyNum] = useState(10)
+  const [totalNum ,setTotalNum] = useState(10)
+  useEffect(() => {
+    fetch(`http://${local}/departmentTotal`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+         setEmergencyNum(res[0].Emergency)
+         setSurgicalNum(res[0].Surgical)
+         setPediatricsNum(res[0].Pediatrics)
+         setInternalNum(res[0].Internal)
+      })
+  }, [])
+
+  useEffect(() => {
+    fetch(`http://${local}/hospitalTotal`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res[0].number)
+        setTotalNum(res[0].number)
+      })
+  }, [])
+
+
   const option = {
     title: {
       text: 'hospital visitors in the latest week',
@@ -29,7 +56,7 @@ function TotalAmount() {
 
   const option2 = {
     title: {
-      text: 'hospital visitors in the latest week',
+      text: 'department visitors in the latest week',
       left: 'center',
       align: 'right'
     },
@@ -40,7 +67,7 @@ function TotalAmount() {
     series: [
       {
         type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
+        data: [EmergencyNum,SurgicalNum,InternalNum,PediatricsNum]
       }
     ]
   };
@@ -61,17 +88,15 @@ function TotalAmount() {
         type: 'pie',
         data: [
           {
-            value: 123,
+            value: EmergencyNum,
           },
           {
-            value: 123,
+            value: SurgicalNum,
           },
           {
-            value: 123,
+            value: InternalNum,
           }, {
-            value: 123,
-          }, {
-            value: 123,
+            value: PediatricsNum,
           }
         ]
       }
@@ -82,7 +107,7 @@ function TotalAmount() {
   const Navigation = useNavigate();
 
   const back = () => {
-    Navigation("/home")
+    Navigation("/RoomList")
   }
   return (
     <div>
@@ -114,7 +139,7 @@ function TotalAmount() {
       />
        <Card title='Real-time people in whole hospital:'>
        <Tag color='#87d068' fill='outline'>
-         123123123
+        {totalNum}
         </Tag>
         </Card>
 

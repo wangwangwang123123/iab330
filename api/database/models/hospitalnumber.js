@@ -1,22 +1,22 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('names', {
-    name: {
+  return sequelize.define('hospitalnumber', {
+    ID: {
       type: DataTypes.STRING(45),
       allowNull: false,
       primaryKey: true
     },
-    age: {
+    number: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
-    photo: {
-      type: DataTypes.BLOB,
+    timestamp: {
+      type: DataTypes.STRING(45),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'names',
+    tableName: 'hospitalnumber',
     timestamps: false,
     indexes: [
       {
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "name" },
+          { name: "ID" },
         ]
       },
     ]

@@ -21,26 +21,27 @@ function Navigation() {
   };
   const tabs = [
     {
-      key: 'home',
-      title: 'Home',
-      icon: <AppOutline />,
-
-      
-
-    },
-    {
-      key: 'totalAmount',
-      title: 'TotalAmount',
-      icon: <UnorderedListOutline />,
-    },
-    {
       key: 'RoomList',
       title: 'RoomList',
       icon: <TeamOutline />,
      
     },
     {
-      key: 'Home',
+      key: 'totalAmount',
+      title: 'TotalAmount',
+      icon: <UnorderedListOutline />,
+    },
+  
+    {
+      key: 'room',
+      title: 'Room',
+      icon: <AppOutline />,
+
+      
+
+    },
+    {
+      key: 'roomList',
       title: 'Back',
       icon: <LeftOutline />,
     },
