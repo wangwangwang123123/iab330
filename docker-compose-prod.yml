@@ -1,23 +1,15 @@
 version: "3.9"
 services:
  db:
-    image: "sqlite"
+    image: "postgres:14.5-alpine"
     restart: always
-    container_name: sqlite-server
-    hostname: sqlite-server
+    container_name: postgresql-server
+    hostname: postgresql-server
     ports:
       - "5432:5432"
     volumes:
-      - ./data/iab33
+      - ./pgdata:/var/lib/postgresql/data
     environment:
-      - SQLITE=dbuser
-      - SQLITE_PASSWORD=iab3302022
-      - SQLITE_DB=iab330
-nodered: 
-    image: nodered/node-red
-    container_name: iab330nodered
-    hostname: iab330nodered
-    ports:
-      - "1880:1880"
-    volumes:
-      - ./nodered:/data
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=iab3302022
+      - POSTGRES_DB=iab330nodered

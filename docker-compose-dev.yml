@@ -3,7 +3,7 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     container_name: api
     hostname: api
     restart: always
@@ -35,6 +35,6 @@ services:
     tty: true
     networks:
       - iab330
-  networks:
+networks:
     iab330:
       external: true    
