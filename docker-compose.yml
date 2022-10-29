@@ -36,5 +36,5 @@ services:
     networks:
       - iab330
 networks:
-    iab330:
-      external: true    
+  iab330:
+    external: true    
