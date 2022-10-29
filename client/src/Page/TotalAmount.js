@@ -3,7 +3,8 @@ import { NavBar,Card,Tag } from 'antd-mobile'
 import ReactEcharts from "echarts-for-react"
 import { useNavigate, } from 'react-router-dom';
 function TotalAmount() {
-  let local = window.location.host
+  let local = window.location.hostname
+  console.log(local)
   const [InternalNum ,setInternalNum] = useState(10)
   const [SurgicalNum ,setSurgicalNum] = useState(10)
   const [PediatricsNum ,setPediatricsNum] = useState(10)
@@ -22,7 +23,7 @@ function TotalAmount() {
   }, [])
 
   useEffect(() => {
-    fetch(`http://${local}/hospitalTotal`)
+    fetch(`http://${local}:9000/hospitalTotal`)
       .then(res => res.json())
       .then(res => {
         console.log(res[0].number)

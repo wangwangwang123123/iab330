@@ -1,5 +1,5 @@
 import React from 'react'
-import { TabBar, Badge } from 'antd-mobile'
+import { TabBar } from 'antd-mobile'
 import {
   AppOutline,
   UnorderedListOutline,

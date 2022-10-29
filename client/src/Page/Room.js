@@ -16,7 +16,9 @@ function Room() {
 
   const now = new Date();
   //every two hours chart
-  let local = window.location.host
+ 
+  let localhost = window.location.hostname
+  console.log(localhost)
   const [SearchParams] = useSearchParams();
   const id = SearchParams.get("id")===null? 1 : SearchParams.get("id") ;
   const department = SearchParams.get("department")===null? "Surgical" : SearchParams.get("department") ;
@@ -30,7 +32,7 @@ function Room() {
 
   useEffect(() => {
 
-    fetch(`http://${local}/getSingleRoom/${department}/${id}`)
+    fetch(`http://${localhost}:9000/getSingleRoom/${department}/${id}`)
       .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组

@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "dbuser",
+    "password": "iab3302022",
+    "database": "iab330nodered",
+    "host": "postgresql-serer",
+    "dialect": "postgresql",
+    "port" : "5432"
+
+  },
+  "test": {
+    "username": "dbuser",
+    "password": "iab3302022",
+    "database": "iab330nodered",
+    "host": "postgresql-serer",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "dbuser",
+    "password": "iab3302022",
+    "database": "iab330nodered",
+    "host": "postgresql-serer",
+    "dialect": "postgresql"
+  }
+}

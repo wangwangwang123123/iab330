@@ -1,25 +1,25 @@
 {
   "development": {
-    "username": "root",
-    "password": "981020",
-    "database": "cab302",
-    "host": "localhost",
-    "dialect": "sqlite",
-    "port" : "3304"
+    "username": "dbuser",
+    "password": "iab3302022",
+    "database": "iab330nodered",
+    "host": "postgresql-serer",
+    "dialect": "postgresql",
+    "port" : "5432"
 
   },
   "test": {
-    "username": "root",
-    "password": "981020",
-    "database": "World",
-    "host": "localhost",
-    "dialect": "mysql"
+    "username": "dbuser",
+    "password": "iab3302022",
+    "database": "iab330nodered",
+    "host": "postgresql-serer",
+    "dialect": "postgresql"
   },
   "production": {
-    "username": "root",
-    "password": "981020",
-    "database": "World",
-    "host": "localhost",
-    "dialect": "mysql"
+    "username": "dbuser",
+    "password": "iab3302022",
+    "database": "iab330nodered",
+    "host": "postgresql-serer",
+    "dialect": "postgresql"
   }
 }

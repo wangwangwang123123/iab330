@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { NavBar, List, Tag, Collapse } from 'antd-mobile'
-import { useNavigate, useLocation, } from 'react-router-dom';
+import { useNavigate,} from 'react-router-dom';
 
 function RoomList() {
 
   const navigate = useNavigate();
-  let local = window.location.host
+  let local = window.location.hostname
+  console.log(local)
   //四个个部门
   const [InternalMedicineRoom, setInternalMedicineRoom] = useState([
 
@@ -117,7 +118,7 @@ function RoomList() {
 
   const findInternalMedicineRoom = () => {
     console.log("InternalMedicine")
-    fetch(`http://${local}/departmentRoom/InternalMedicine`)
+    fetch(`http://${local}:9000/departmentRoom/InternalMedicine`)
     .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
@@ -129,7 +130,7 @@ function RoomList() {
 
   const findSurgicalRoom = () => {
     console.log("Surgical")
-    fetch(`http://${local}/departmentRoom/Surgical`)
+    fetch(`http://${local}:9000/departmentRoom/Surgical`)
     .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
@@ -143,7 +144,7 @@ function RoomList() {
 
   const findPediatricsRoom= () => {
     console.log("Pediatrics")
-    fetch(`http://${local}/departmentRoom/Pediatrics`)
+    fetch(`http://${local}:9000/departmentRoom/Pediatrics`)
     .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
@@ -155,7 +156,7 @@ function RoomList() {
 
   const findEmergencyRoom= () => {
     console.log("Emergency")
-    fetch(`http://${local}/departmentRoom/Emergency`)
+    fetch(`http://${local}:9000/departmentRoom/Emergency`)
     .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
