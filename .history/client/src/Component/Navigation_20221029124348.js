@@ -31,6 +31,15 @@ function Navigation() {
       title: 'TotalAmount',
       icon: <UnorderedListOutline />,
     },
+  
+    {
+      key: 'room',
+      title: 'Room',
+      icon: <AppOutline />,
+
+      
+
+    },
     {
       key: 'roomList',
       title: 'Back',

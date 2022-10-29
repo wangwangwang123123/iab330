@@ -18,7 +18,7 @@ function TotalAmount() {
          setEmergencyNum(res[0].emergency)
          setSurgicalNum(res[0].surgical)
          setPediatricsNum(res[0].pediatrics)
-         setInternalNum(res[0].internal)
+         setInternalNum(res[0].Internal)
       })
   }, [])
 

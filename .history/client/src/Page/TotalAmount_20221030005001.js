@@ -15,10 +15,10 @@ function TotalAmount() {
       .then(res => res.json())
       .then(res => {
         console.log(res)
-         setEmergencyNum(res[0].emergency)
-         setSurgicalNum(res[0].surgical)
-         setPediatricsNum(res[0].pediatrics)
-         setInternalNum(res[0].internal)
+         setEmergencyNum(res[0].Emergency)
+         setSurgicalNum(res[0].Surgical)
+         setPediatricsNum(res[0].Pediatrics)
+         setInternalNum(res[0].Internal)
       })
   }, [])
 
@@ -29,7 +29,7 @@ function TotalAmount() {
         console.log(res[0].number)
         setTotalNum(res[0].number)
       })
-  }, [totalNum])
+  }, [tot])
 
 
   const option = {

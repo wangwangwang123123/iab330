@@ -13,11 +13,20 @@ function RoomList() {
   ])
 
   const [SurgicalRoom, setSurgicalRoom] = useState([
+
+
+
   ])
   const [PediatricsRoom, setPediatricsRoom] = useState([
+
+
+
+
   ])
 
   const [EmergencyRoom, setEmergencyRoom] = useState([
+
+
 
   ])
 

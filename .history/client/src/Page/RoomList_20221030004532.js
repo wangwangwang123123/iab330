@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavBar, List, Tag, Collapse } from 'antd-mobile'
-import { useNavigate, } from 'react-router-dom';
+import { useNavigate,} from 'react-router-dom';
 
 function RoomList() {
 
@@ -10,15 +10,49 @@ function RoomList() {
   //四个个部门
   const [InternalMedicineRoom, setInternalMedicineRoom] = useState([
 
+    {
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
+      "timestamp": null
+    },
+    {
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
+      "timestamp": null
+    },
+    {
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
+      "timestamp": null
+    },
+
   ])
 
   const [SurgicalRoom, setSurgicalRoom] = useState([
+
+    
+
   ])
-  const [PediatricsRoom, setPediatricsRoom] = useState([
+  const [PediatricsRoom,setPediatricsRoom]=useState([
+
+   
+    
+
   ])
 
-  const [EmergencyRoom, setEmergencyRoom] = useState([
+  const [EmergencyRoom,setEmergencyRoom]=useState([
 
+    
+  
   ])
 
 
@@ -26,7 +60,7 @@ function RoomList() {
   const findInternalMedicineRoom = () => {
     console.log("InternalMedicine")
     fetch(`http://${local}:9000/departmentRoom/InternalMedicine`)
-      .then(res => res.json())
+    .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
         console.log(res)
@@ -38,7 +72,7 @@ function RoomList() {
   const findSurgicalRoom = () => {
     console.log("Surgical")
     fetch(`http://${local}:9000/departmentRoom/Surgical`)
-      .then(res => res.json())
+    .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
         console.log(res)
@@ -49,10 +83,10 @@ function RoomList() {
 
   //拿到部门数据，渲染出列表，点击单个room，带着room id跳转到单个room
 
-  const findPediatricsRoom = () => {
+  const findPediatricsRoom= () => {
     console.log("Pediatrics")
     fetch(`http://${local}:9000/departmentRoom/Pediatrics`)
-      .then(res => res.json())
+    .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
         console.log(res)
@@ -61,10 +95,10 @@ function RoomList() {
       })
   }
 
-  const findEmergencyRoom = () => {
+  const findEmergencyRoom= () => {
     console.log("Emergency")
     fetch(`http://${local}:9000/departmentRoom/Emergency`)
-      .then(res => res.json())
+    .then(res => res.json())
       .then(res => {
         //返回包含每个row对象的数组
         console.log(res)
@@ -144,7 +178,7 @@ function RoomList() {
           onClick={findPediatricsRoom}
         >
 
-          <List>
+        <List>
             {PediatricsRoom.map(room => (
               <List.Item
                 key={room.id}
@@ -167,8 +201,8 @@ function RoomList() {
         </Collapse.Panel>
 
         <Collapse.Panel key='4' title='Emergency'
-          onClick={findEmergencyRoom}>
-          <List>
+        onClick={findEmergencyRoom}>
+        <List>
             {EmergencyRoom.map(room => (
               <List.Item
                 key={room.id}
