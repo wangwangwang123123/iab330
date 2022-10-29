@@ -33,7 +33,7 @@ const test = async (req,res)=>{
  const getDepartmentRooms = async (req,res)=>{
 	try{
 		console.log(req.params.query)
-		const Department = await models.room_details.findAll({where:{Category:req.params.query}})  
+		const Department = await models.room_details.findAll({where:{category:req.params.query}})  
 
 		return res.status(200).send(Department);
 	}catch(error){
@@ -60,8 +60,8 @@ const getSingleRoom = async (req,res)=>{
 		console.log(req.params.category)
 		console.log(req.params.idd)
 
-		/* findAll({where:{RoomId :req.params.category,CATEGORY: req.params.id}})   */
-		const Rooms = await models.room_details.findAll({where:{Category:req.params.category,Room_ID: req.params.idd }})  
+		
+		const Rooms = await models.room_details.findAll({where:{category:req.params.category,room_id: req.params.idd }})  
 
 		return res.status(200).send(Rooms);
 	}catch(error){
@@ -74,7 +74,7 @@ const getSingleRoom = async (req,res)=>{
 //
 const getTotalNum = async (req,res)=>{
 	try{
-		/* findAll({where:{RoomId :req.params.category,CATEGORY: req.params.id}})   */
+		
 		const Rooms = await models.hospitalnumber.findAll()  
 
 		return res.status(200).send(Rooms);
@@ -84,10 +84,10 @@ const getTotalNum = async (req,res)=>{
 } 
 
 
-//各个部门+人数
+
 const getDepartmentNum = async (req,res)=>{
 	try{
-		/* findAll({where:{RoomId :req.params.category,CATEGORY: req.params.id}})   */
+		
 		const Rooms = await models.hospital.findAll()  
 
 		return res.status(200).send(Rooms);

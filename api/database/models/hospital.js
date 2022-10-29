@@ -1,24 +1,24 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('hospital', {
-    Internal: {
+    internal: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    surgical: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    pediatrics: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    emergency: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    id: {
       type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    Surgical: {
-      type: DataTypes.STRING(45),
-      allowNull: true
-    },
-    Pediatrics: {
-      type: DataTypes.STRING(45),
-      allowNull: true
-    },
-    Emergency: {
-      type: DataTypes.STRING(45),
-      allowNull: true
-    },
-    ID: {
-      type: DataTypes.STRING(45),
       allowNull: false,
       primaryKey: true
     }
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "ID" },
+          { name: "id" },
         ]
       },
       {
@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "ID" },
+          { name: "id" },
         ]
       },
     ]

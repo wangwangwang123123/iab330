@@ -3,7 +3,7 @@
     "username": "dbuser",
     "password": "iab3302022",
     "database": "iab330nodered",
-    "host": "postgresql-serer",
+    "host": "postgresql-server",
     "dialect": "postgresql",
     "port" : "5432"
 

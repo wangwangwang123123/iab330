@@ -1,16 +1,16 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('room_details', {
-    ID: {
+    id: {
       type: DataTypes.STRING(45),
       allowNull: true,
       primaryKey: true
     },
-    Room_ID: {
+    room_Id: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    Category: {
+    category: {
       type: DataTypes.STRING(45),
       allowNull: true
     },

@@ -11,7 +11,7 @@ function TotalAmount() {
   const [EmergencyNum ,setEmergencyNum] = useState(10)
   const [totalNum ,setTotalNum] = useState(10)
   useEffect(() => {
-    fetch(`http://${local}/departmentTotal`)
+    fetch(`http://${local}:9000/departmentTotal`)
       .then(res => res.json())
       .then(res => {
         console.log(res)
@@ -23,7 +23,7 @@ function TotalAmount() {
   }, [])
 
   useEffect(() => {
-    fetch(`http://${local}:9000/hospitalTotal`)
+    fetch(`http://${local}:900/hospitalTotal`)
       .then(res => res.json())
       .then(res => {
         console.log(res[0].number)

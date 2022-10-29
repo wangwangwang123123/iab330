@@ -11,84 +11,85 @@ function RoomList() {
   const [InternalMedicineRoom, setInternalMedicineRoom] = useState([
 
     {
-      "ID": null,
-      "Room_ID": 1,
-      "Category": "B",
-      "visitor_number": "1",
-      "patient_number": "2",
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
       "timestamp": null
     },
     {
-      "ID": null,
-      "Room_ID": 2,
-      "Category": "B",
-      "visitor_number": "2",
-      "patient_number": "2",
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
       "timestamp": null
     },
     {
-      "ID": null,
-      "Room_ID": 3,
-      "Category": "B",
-      "visitor_number": "2",
-      "patient_number": "3",
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
       "timestamp": null
-    }
+    },
 
   ])
 
   const [SurgicalRoom, setSurgicalRoom] = useState([
 
     {
-      "ID": null,
-      "Room_ID": 1,
-      "Category": "A",
-      "visitor_number": 6,
-      "patient_number": 1,
-      "timestamp": null
-    },
-    {
-      "ID": null,
-      "Room_ID": 2,
-      "Category": "Internal",
+      "id": null,
+      "room_id": 1,
+      "category": "Internal",
       "visitor_number": 2,
       "patient_number":3,
       "timestamp": null
     },
     {
-      "ID": null,
-      "Room_ID": 3,
-      "Category": "Surgical",
-      "visitor_number": 4,
-      "patient_number": 5,
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
+      "timestamp": null
+    },
+    {
+      "id": null,
+      "room_id": 3,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
       "timestamp": null
     }
 
   ])
   const [PediatricsRoom,setPediatricsRoom]=useState([
 
+   
     {
-      "ID": null,
-      "Room_ID": 1,
-      "Category": "B",
-      "visitor_number": 3,
-      "patient_number": 4,
-      "timestamp": null
-    },
-    {
-      "ID": null,
-      "Room_ID": 2,
-      "Category": "B",
+      "id": null,
+      "room_id": 1,
+      "category": "Internal",
       "visitor_number": 2,
-      "patient_number": 1,
+      "patient_number":3,
       "timestamp": null
     },
     {
-      "ID": null,
-      "Room_ID": 3,
-      "Category": "B",
-      "visitor_number": 5,
-      "patient_number": 2,
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
+      "timestamp": null
+    },
+    {
+      "id": null,
+      "room_id": 3,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
       "timestamp": null
     }
 
@@ -96,20 +97,29 @@ function RoomList() {
 
   const [EmergencyRoom,setEmergencyRoom]=useState([
 
+    
     {
-      "ID": null,
-      "Room_ID": 1,
-      "Category": "B",
+      "id": null,
+      "room_id": 1,
+      "category": "Internal",
       "visitor_number": 2,
-      "patient_number": 1,
+      "patient_number":3,
       "timestamp": null
     },
     {
-      "ID": null,
-      "Room_ID": 2,
-      "Category": "B",
-      "visitor_number": 4,
-      "patient_number": 5,
+      "id": null,
+      "room_id": 2,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
+      "timestamp": null
+    },
+    {
+      "id": null,
+      "room_id": 3,
+      "category": "Internal",
+      "visitor_number": 2,
+      "patient_number":3,
       "timestamp": null
     }
   ])
@@ -180,15 +190,15 @@ function RoomList() {
           <List>
             {InternalMedicineRoom.map(room => (
               <List.Item
-                key={room.ID}
+                key={room.id}
                 onClick={() => {
-                  console.log(room.Room_ID)
+                  console.log(room.room_id)
 
-                  navigate(`/room?id=${room.Room_ID}&department=${room.Category}`)
+                  navigate(`/room?id=${room.room.id}&department=${room.category}`)
                 }}
 
               >
-                Room: {room.Room_ID}
+                Room: {room.room_id}
                 {room.patient_number + room.visitor_number <= 8 ? <Tag className='MyTag' color='success'>Empty</Tag>
                   :
                   <Tag className='MyTag' color='danger'>Full</Tag>}
@@ -213,15 +223,15 @@ function RoomList() {
           <List>
             {SurgicalRoom.map(room => (
               <List.Item
-                key={room.ID}
+                key={room.id}
                 onClick={() => {
-                  console.log(room.Room_ID)
+                  console.log(room.room_id)
 
-                  navigate(`/room?id=${room.Room_ID}&department=${room.Category}`)
+                  navigate(`/room?id=${room.room_id}&department=${room.category}`)
                 }}
 
               >
-                Room: {room.Room_ID}
+                Room: {room.room_id}
                 {room.patient_number + room.visitor_number <= 8 ? <Tag className='MyTag' color='success'>Empty</Tag>
                   :
                   <Tag className='MyTag' color='danger'>Full</Tag>}
@@ -240,15 +250,15 @@ function RoomList() {
         <List>
             {PediatricsRoom.map(room => (
               <List.Item
-                key={room.ID}
+                key={room.id}
                 onClick={() => {
-                  console.log(room.Room_ID)
+                  console.log(room.room_id)
 
-                  navigate(`/room?id=${room.Room_ID}&department=${room.Category}`)
+                  navigate(`/room?id=${room.room_id}&department=${room.category}`)
                 }}
 
               >
-                Room: {room.Room_ID}
+                Room: {room.room_id}
                 {room.patient_number + room.visitor_number <= 8 ? <Tag className='MyTag' color='success'>Empty</Tag>
                   :
                   <Tag className='MyTag' color='danger'>Full</Tag>}
@@ -264,15 +274,15 @@ function RoomList() {
         <List>
             {EmergencyRoom.map(room => (
               <List.Item
-                key={room.ID}
+                key={room.id}
                 onClick={() => {
-                  console.log(room.Room_ID)
+                  console.log(room.room_id)
 
-                  navigate(`/room?id=${room.Room_ID}&department=${room.Category}`)
+                  navigate(`/room?id=${room.room_id}&department=${room.category}`)
                 }}
 
               >
-                Room: {room.Room_ID}
+                Room: {room.room_id}
                 {room.patient_number + room.visitor_number <= 8 ? <Tag className='MyTag' color='success'>Empty</Tag>
                   :
                   <Tag className='MyTag' color='danger'>Full</Tag>}
