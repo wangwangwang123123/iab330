@@ -45,7 +45,7 @@ function Room() {
 
   const option = {
     title: {
-      text: "every two hours visitors",
+      text: `Room ID: ${id}`,
       left: 'center',
       align: 'right'
     },
@@ -95,11 +95,18 @@ function Room() {
 
     },
     {
-      id: '4',
+      id: '1',
       avatar: "https://images.unsplash.com/photo-1548532928-b34e3be62fc6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-      name: "*****",
+      name: "JunHao Li",
+ 
 
-    }
+    }, {
+      id: '1',
+      avatar: "https://images.unsplash.com/photo-1548532928-b34e3be62fc6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+      name: "JunHao Li",
+  
+
+    },
 
   ]
 
@@ -119,7 +126,7 @@ function Room() {
 
       <div>
         <Tag color='primary' fill='outline'>
-          Room ID : {id}
+          Every two hours
         </Tag>
         <ReactEcharts
           className='ReactEcharts'

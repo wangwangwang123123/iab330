@@ -119,7 +119,7 @@ function Room() {
 
       <div>
         <Tag color='primary' fill='outline'>
-          Room ID : {id}
+          Room ID : {}
         </Tag>
         <ReactEcharts
           className='ReactEcharts'

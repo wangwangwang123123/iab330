@@ -45,7 +45,7 @@ function Room() {
 
   const option = {
     title: {
-      text: "every two hours visitors",
+      text: "every tw",
       left: 'center',
       align: 'right'
     },
@@ -119,7 +119,7 @@ function Room() {
 
       <div>
         <Tag color='primary' fill='outline'>
-          Room ID : {id}
+          Every two hours
         </Tag>
         <ReactEcharts
           className='ReactEcharts'

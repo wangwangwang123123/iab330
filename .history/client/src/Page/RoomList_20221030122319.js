@@ -91,7 +91,7 @@ function RoomList() {
                 onClick={() => {
                   console.log(room.room_id)
 
-                  navigate(`/room?id=${room.room_id}&department=${room.category}`)
+                  navigate(`/room?id=${room.roomid}&department=${room.category}`)
                 }}
 
               >
